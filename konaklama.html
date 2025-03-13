@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="stylesheet" href="konaklama.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url('dark4.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: white; font-family: 'EB Garamond', serif;">
+
+    <!-- Navbar -->
+    <nav>
+        <table width="100%">
+            <tr>
+                <td width="10%" style="display: flex; align-items: center;">
+                    <img src="new_logo.png" alt="Logo" width="70">
+                    <span class="navbar-title">Palan Kayak Evi</span>
+                </td>                  
+                </td>
+                <td align="center">
+                    <a href="index.html">Anasayfa</a> |
+                    <a href="kiralama.html">Kiralama</a> |
+                    <a href="konaklama.html">Konaklama</a> | 
+                    <a href="iletisim.html">İletişim</a> |
+                    <a href="galeri.html">Galeri</a>
+                </td>
+            </tr>
+        </table>
+    </nav>
+
+    <div class="form-container">
+        <h2>Konaklama Bilgileri</h2>
+        
+        <form method="POST" action="submit_form.php">
+            <!-- Kişi Sayısı -->
+            <label for="person_count">Kişi Sayısı:</label>
+            <div id="person_count">
+                <div class="person-group">
+                    <label for="adults">Yetişkin:</label>
+                    <button type="button" id="adults-minus" class="change-btn">-</button>
+                    <span id="adults-count">1</span>
+                    <button type="button" id="adults-plus" class="change-btn">+</button>
+                </div>
+                
+                <div class="person-group">
+                    <label for="children">Emekli :</label>
+                    <button type="button" id="children-minus" class="change-btn">-</button>
+                    <span id="children-count">0</span>
+                    <button type="button" id="children-plus" class="change-btn">+</button>
+                </div>
+                
+                <div class="person-group">
+                    <label for="students">Öğrenci:</label>
+                    <button type="button" id="students-minus" class="change-btn">-</button>
+                    <span id="students-count">0</span>
+                    <button type="button" id="students-plus" class="change-btn">+</button>
+                </div>
+            </div>
+    
+            <!-- Giriş ve Çıkış Tarihleri -->
+            <label for="checkin">Giriş Tarihi:</label>
+            <input type="date" id="checkin" name="checkin" required>
+            
+            <label for="checkout">Çıkış Tarihi:</label>
+            <input type="date" id="checkout" name="checkout" required>
+    
+            <!-- İlerle Butonu -->
+            <button type="submit" name="submit">İlerle</button>
+        </form>
+    </div>
+
+    <!-- JavaScript Kodları -->
+    <script>
+        document.getElementById('adults-plus').onclick = function() {
+            var adultsCount = document.getElementById('adults-count');
+            adultsCount.innerText = parseInt(adultsCount.innerText) + 1;
+        };
+
+        document.getElementById('adults-minus').onclick = function() {
+            var adultsCount = document.getElementById('adults-count');
+            if (parseInt(adultsCount.innerText) > 0) {
+                adultsCount.innerText = parseInt(adultsCount.innerText) - 1;
+            }
+        };
+
+        document.getElementById('children-plus').onclick = function() {
+            var childrenCount = document.getElementById('children-count');
+            childrenCount.innerText = parseInt(childrenCount.innerText) + 1;
+        };
+
+        document.getElementById('children-minus').onclick = function() {
+            var childrenCount = document.getElementById('children-count');
+            if (parseInt(childrenCount.innerText) > 0) {
+                childrenCount.innerText = parseInt(childrenCount.innerText) - 1;
+            }
+        };
+
+        document.getElementById('students-plus').onclick = function() {
+            var studentsCount = document.getElementById('students-count');
+            studentsCount.innerText = parseInt(studentsCount.innerText) + 1;
+        };
+
+        document.getElementById('students-minus').onclick = function() {
+            var studentsCount = document.getElementById('students-count');
+            if (parseInt(studentsCount.innerText) > 0) {
+                studentsCount.innerText = parseInt(studentsCount.innerText) - 1;
+            }
+        };
+    </script>
+<footer>
+    <center>
+    © Calp Soft. Tüm hakları saklıdır.<br>
+    Mart/2025<br>
+    İzmir, Türkiye
+    </center>
+</footer>
+</body>
+</html>

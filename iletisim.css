@@ -1,0 +1,142 @@
+/* Google Fonts'tan EB Garamond fontunu dahil etme */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/* Tüm sayfa için font-family */
+body, h1, h2, p, nav a, footer p,.navbar-title {
+    font-family: 'EB Garamond', serif; /* Garamond yazı tipi */
+}
+
+/* Navbar Stilleri */
+nav {
+    background-color: rgb(18, 15, 15); /* Yarı şeffaf arka plan ,0.7 */
+    position: fixed; /* Sabit navbar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Tam genişlik */
+    padding: 5px 0; /* Üst ve alt padding'i küçültüyoruz */
+    z-index: 1000; /* Diğer içeriklerin üzerinde görünmesini sağlamak */
+}
+
+/* Navbar İçeriği */
+nav table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Navbar Bağlantıları */
+nav a {
+    color: white; /* Bağlantı metni beyaz */
+    font-size: 18px; /* Yazı boyutu */
+    font-family: 'EB Garamond', serif;
+    padding: 10px 20px;
+    text-decoration: none; /* Alt çizgi kaldırıldı */
+    display: inline-block; /* Yatay hizalama */
+    transition: all 0.3s ease; /* Geçiş animasyonu */
+}
+
+/* Navbar Bağlantı Linklerine Hover Efekti */
+nav a:hover {
+    background-color: grey; /* Hover rengi */
+    transform: scale(1.2); /* Hover efekti ile büyüme */
+    border-radius: 12px; /* Kenarları yuvarlatma */
+}
+
+/* Navbar logo */
+nav img {
+    width: 70px;
+    height: auto;
+    margin-left: 10px;
+}
+/* Navbar logo baslıgı */
+.navbar-title {
+    white-space: nowrap; /* Yazının alt alta gelmesini engeller */
+    display: inline-block; /* Gerekirse inline eleman gibi davranmasını sağlar */
+
+}
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url('dag_resmi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 100px; /* Navbar ile içerik üst üste binmesin */
+}
+/* İletişim Sayfası Kutusu */
+.iletisim-container {
+    width: 88%; /* Kutu genişliği oranı */
+    position: absolute;
+    top: 65%;
+    left: 5%; /* Sol taraftan biraz boşluk bıraktık */
+    transform: translateY(-65%); /* Dikey olarak ortaladı */
+    padding: 20px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.4); /* Saydam arka plan */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Başlık Stili */
+.iletisim-container h2 {
+    font-size: 28px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+/* Paragraf ve Link Stilleri */
+.iletisim-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+}
+
+.iletisim-container a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.iletisim-container a:hover {
+    text-decoration: underline;
+}
+
+/* Başlık Stili */
+.map-container h2 {
+    font-size: 28px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+/* Google Map Konumu */
+.map-container {
+    position: absolute;
+    top: 50%;
+    right: 5%; /* Sağ tarafta konumlandırıldı */
+    transform: translateY(-50%); /* Dikey olarak ortaladı */
+    width: 45%; /* Ekranın %45'ini kaplayacak */
+    height: 300px; /* Yükseklik ayarlandı */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    
+}
+/* Footer Stilleri */
+footer {
+    background-color: rgba(18,15,15); /* Yarı şeffaf arka plan */
+    color: white; /* Yazı rengi beyaz */
+    font-family: 'EB Garamond', serif; /* Font tipi */
+    font-size: 1.2em; /* Yazı boyutu */
+    padding: 20px 0; /* Yatay ve dikey padding footer buyuklugu*/
+    text-align: center; /* Yazıyı ortalar */
+    margin-top:790px; /* İçerikten sonra boşluk bırakır */
+    width: 100%; /* Tam genişlik */
+}
+
+
+/* Footer'ı daha belirgin hale getirmek için */
+footer p {
+    margin: 0;
+    padding: 5px 0;
+}

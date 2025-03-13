@@ -1,0 +1,220 @@
+/* Google Fonts'tan EB Garamond fontunu dahil etme */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/* Tüm sayfa için font-family */
+body, h1, h2, p, nav a, footer p {
+    font-family: 'EB Garamond', serif; /* Garamond yazı tipi */
+}
+
+/* Navbar Stilleri */
+nav {
+    background-color: rgb(18, 15, 15); /* Yarı şeffaf arka plan ,0.7 */
+    position: fixed; /* Sabit navbar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Tam genişlik */
+    padding: 5px 0; /* Üst ve alt padding'i küçültüyoruz */
+    z-index: 1000; /* Diğer içeriklerin üzerinde görünmesini sağlamak */
+}
+
+/* Navbar İçeriği */
+nav table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Navbar Bağlantıları */
+nav a {
+    color: white; /* Bağlantı metni beyaz */
+    font-size: 18px; /* Yazı boyutu */
+    font-family: 'EB Garamond', serif;
+    padding: 10px 20px;
+    text-decoration: none; /* Alt çizgi kaldırıldı */
+    display: inline-block; /* Yatay hizalama */
+    transition: all 0.3s ease; /* Geçiş animasyonu */
+}
+
+/* Navbar Bağlantı Linklerine Hover Efekti */
+nav a:hover {
+    background-color: grey; /* Hover rengi */
+    transform: scale(1.2); /* Hover efekti ile büyüme */
+    border-radius: 12px; /* Kenarları yuvarlatma */
+}
+
+/* Navbar logo */
+nav img {
+    width: 70px;
+    height: auto;
+    margin-left: 10px;
+}
+/* Navbar logo baslıgı */
+.navbar-title {
+    white-space: nowrap; /* Yazının alt alta gelmesini engeller */
+    display: inline-block; /* Gerekirse inline eleman gibi davranmasını sağlar */
+
+}
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url('dag_resmi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 100px; /* Navbar ile içerik üst üste binmesin */
+}
+
+/* Formun genel kutu stili */
+.form-container {
+    position: absolute; /* Ekranın ortasında konumlandırabilmek için absolute kullanıyoruz */
+    top: 70%; /* Yüksekliği ekranın %50'sine yerleştiriyoruz */
+    left: 50%; /* Genişliği ekranın %50'sine yerleştiriyoruz */
+    transform: translate(-50%, -50%); /* Formu tam ortalamak için negatif kaydırma */
+    background-color: rgba(0, 0, 0, 0.7); /* Yarı şeffaf arka plan */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%; /* Ekranda genişlik 100% olacak şekilde */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Başlık Stili */
+.form-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+/* Form etiketleri ve input alanları */
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Giriş ve Çıkış Tarihleri için takvim düzenlemesi */
+input[type="date"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Tarih alanlarına odaklanıldığında stil değişikliği */
+input[type="date"]:focus {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: #ffcc00;
+    outline: none;
+}
+
+/* Kişi sayısı seçici stili */
+#person_count {
+    margin-bottom: 20px;
+}
+
+/* Bebek ve Öğrenci seçeneklerini yan yana yazma */
+.person-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between; /* Eşit aralıklarla yan yana yerleştir */
+}
+
+.person-group label {
+    margin-right: 10px;
+}
+
+/* Kişi sayısını değiştirme butonları */
+.change-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease; /* Hızlı animasyon */
+}
+
+.change-btn:hover {
+    background-color: #555;
+    transform: scale(1.2); /* Daha hızlı büyüme efekti */
+}
+
+/* Kişi sayısı yazısı */
+span {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* İlerle butonunun stili - Butonu ortalamak için margin otomatik */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px auto; /* Butonu yatayda ortalar */
+    display: block;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Footer stili */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Responsive Tasarım: Mobil cihazlar için */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}
+/* Footer Stilleri */
+footer {
+    background-color: rgba(18,15,15); /* Yarı şeffaf arka plan */
+    color: white; /* Yazı rengi beyaz */
+    font-family: 'EB Garamond', serif; /* Font tipi */
+    font-size: 1.2em; /* Yazı boyutu */
+    padding: 20px 0; /* Yatay ve dikey padding footer buyuklugu*/
+    text-align: center; /* Yazıyı ortalar */
+    margin-top:900px; /* İçerikten sonra boşluk bırakır */
+    width: 100%; /* Tam genişlik */
+    position: sticky;
+}
+/* Footer'ı daha belirgin hale getirmek için */
+footer p {
+    margin: 0;
+    padding: 5px 0;
+}

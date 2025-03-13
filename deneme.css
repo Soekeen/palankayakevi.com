@@ -1,0 +1,49 @@
+/* Google Fonts'tan EB Garamond fontunu dahil etme */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/* Tüm sayfa için font-family */
+body, h1, h2, p, nav a, footer p {
+    font-family: 'EB Garamond', serif; /* Garamond yazı tipi */
+}
+
+/* Navbar Stilleri */
+nav {
+    background-color: rgb(18, 15, 15); /* Yarı şeffaf arka plan ,0.7 */
+    position: fixed; /* Sabit navbar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Tam genişlik */
+    padding: 5px 0; /* Üst ve alt padding'i küçültüyoruz */
+    z-index: 1000; /* Diğer içeriklerin üzerinde görünmesini sağlamak */
+}
+
+/* Navbar İçeriği */
+nav table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Navbar Bağlantıları */
+nav a {
+    color: white; /* Bağlantı metni beyaz */
+    font-size: 18px; /* Yazı boyutu */
+    font-family: 'EB Garamond', serif;
+    padding: 10px 20px;
+    text-decoration: none; /* Alt çizgi kaldırıldı */
+    display: inline-block; /* Yatay hizalama */
+    transition: all 0.3s ease; /* Geçiş animasyonu */
+}
+
+/* Navbar Bağlantı Linklerine Hover Efekti */
+nav a:hover {
+    background-color: grey; /* Hover rengi */
+    transform: scale(1.2); /* Hover efekti ile büyüme */
+    border-radius: 12px; /* Kenarları yuvarlatma */
+}
+
+/* Navbar logo */
+nav img {
+    width: 70px;
+    height: auto;
+    margin-left: 10px;
+}

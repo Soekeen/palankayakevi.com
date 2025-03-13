@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiralama</title>
+    <link rel="stylesheet" href="kiralama.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <script>
+        function updateTotal(id, price) {
+            let quantity = document.getElementById(id).value;
+            document.getElementById(id + "_total").innerText = (quantity * price) + " TL";
+            updateReservationList();
+        }
+
+        function updateReservationList() {
+            let items = [
+                {id: "kayak", name: "Kayak Takımı", price: 500},
+                {id: "snowboard", name: "Snowboard Takımı", price: 550},
+                {id: "kask", name: "Kask", price: 100},
+                {id: "gozluk", name: "Gözlük", price: 120},
+                {id: "mont", name: "Mont", price: 500},
+                {id: "pantolon", name: "Pantolon", price: 180},
+                {id: "iclik", name: "Termal İçlik Takımı", price: 150},
+                {id: "bot", name: "Kar Botu", price: 220},
+                {id: "cocuk_kayak", name: "Çocuk Kayak Takımı", price: 400}
+            ];
+            
+            let reservationList = document.getElementById("reservationList");
+            reservationList.innerHTML = "";
+            let total = 0;
+            let hasItem = false;
+            
+            items.forEach(item => {
+                let quantity = document.getElementById(item.id).value;
+                if (quantity > 0) {
+                    hasItem = true;
+                    let totalItemPrice = quantity * item.price;
+                    total += totalItemPrice;
+                    reservationList.innerHTML += `<p>${item.name} x${quantity} - ${totalItemPrice} TL</p>`;
+                }
+            });
+            
+            document.getElementById("totalPrice").innerText = total + " TL";
+            document.getElementById("reserveButton").disabled = !hasItem;
+        }
+
+        function generateReservation() {
+            let reservationCode = Math.random().toString(36).substr(2, 6).toUpperCase();
+            document.getElementById("reservationCode").innerText = "Rezervasyon Kodunuz: " + reservationCode;
+        }
+    </script>
+</head>
+<body style="background-image: url('dark4.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: white; font-family: Arial, sans-serif;">
+
+    <!-- Navbar -->
+    <nav>
+        <table width="100%">
+            <tr>
+                <td width="10%" style="display: flex; align-items: center;">
+                        <img src="new_logo.png" alt="Logo" width="70">
+                        <span class="navbar-title">Palan Kayak Evi</span>               
+                </td>
+                <td align="center">
+                    <a href="index.html">Anasayfa</a> |
+                    <a href="kiralama.html">Kiralama</a> |
+                    <a href="konaklama.html">Konaklama</a> | 
+                    <a href="iletisim.html">İletişim</a> |
+                    <a href="galeri.html">Galeri</a>
+                </td>
+            </tr>
+        </table>
+    </nav>
+
+    
+    <table class="kiralama-tablo" border="1">
+        <thead>
+            <h2>Kiralama Ekipmanları</h2>
+        </thead>
+        <tr><th>Ürün</th><th>Fiyat</th><th>Adet</th><th>Toplam</th></tr>
+        <tr><td>Kayak Takımı</td><td>500 TL</td><td><input type="number" id="kayak" value="0" min="0" onchange="updateTotal('kayak', 500)"></td><td id="kayak_total">0 TL</td></tr>
+        <tr><td>Snowboard Takımı</td><td>550 TL</td><td><input type="number" id="snowboard" value="0" min="0" onchange="updateTotal('snowboard', 550)"></td><td id="snowboard_total">0 TL</td></tr>
+        <tr><td>Kask</td><td>100 TL</td><td><input type="number" id="kask" value="0" min="0" onchange="updateTotal('kask', 100)"></td><td id="kask_total">0 TL</td></tr>
+        <tr><td>Gözlük</td><td>120 TL</td><td><input type="number" id="gozluk" value="0" min="0" onchange="updateTotal('gozluk', 120)"></td><td id="gozluk_total">0 TL</td></tr>
+        <tr><td>Mont</td><td>500 TL</td><td><input type="number" id="mont" value="0" min="0" onchange="updateTotal('mont', 500)"></td><td id="mont_total">0 TL</td></tr>
+        <tr><td>Pantolon</td><td>180 TL</td><td><input type="number" id="pantolon" value="0" min="0" onchange="updateTotal('pantolon', 180)"></td><td id="pantolon_total">0 TL</td></tr>
+        <tr><td>Termal İçlik Takımı</td><td>150 TL</td><td><input type="number" id="iclik" value="0" min="0" onchange="updateTotal('iclik', 150)"></td><td id="iclik_total">0 TL</td></tr>
+        <tr><td>Kar Botu</td><td>220 TL</td><td><input type="number" id="bot" value="0" min="0" onchange="updateTotal('bot', 220)"></td><td id="bot_total">0 TL</td></tr>
+        <tr><td>Çocuk Kayak Takımı</td><td>400 TL</td><td><input type="number" id="cocuk_kayak" value="0" min="0" onchange="updateTotal('cocuk_kayak', 400)"></td><td id="cocuk_kayak_total">0 TL</td></tr>
+    </table>
+    
+    <h2>Rezervasyon Oluşturulan Ürünler</h2>
+    <div id="reservationList"></div>
+    <h3>Toplam Tutar: <span id="totalPrice">0 TL</span></h3>
+    <button id="reserveButton" onclick="generateReservation()" disabled>Rezervasyon Oluştur</button>
+    <p id="reservationCode"></p>
+    
+    <h4><strong>Önemli!</strong> Rezervasyon edilen ürünler ziyaret günü içinde rezervasyon numarası ile gişede nakit ya da kart ile ödeme yapılarak teslim alınmalıdır. Aksi takdirde rezervasyonunuz düşecektir.</h4>
+     
+<footer>
+    <center>
+    © Calp Soft. Tüm hakları saklıdır.<br>
+    Mart/2025<br>
+    İzmir, Türkiye
+    </center>
+</footer>
+</body>
+</html>

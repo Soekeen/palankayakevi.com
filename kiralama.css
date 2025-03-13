@@ -1,0 +1,184 @@
+/* Google Fonts'tan EB Garamond fontunu dahil etme */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/* Tüm sayfa için font-family */
+body,h2,nav a, footer,.navbar-title,table, th, td{
+    font-family: 'EB Garamond', serif; /* Garamond yazı tipi */
+}
+/* Navbar Stilleri */
+nav {
+    background-color: rgb(18, 15, 15); /* Yarı şeffaf arka plan ,0.7 */
+    position: fixed; /* Sabit navbar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Tam genişlik */
+    padding: 5px 0; /* Üst ve alt padding'i küçültüyoruz */
+    z-index: 1000; /* Diğer içeriklerin üzerinde görünmesini sağlamak */
+}
+
+/* Navbar İçeriği */
+nav table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Navbar Bağlantıları */
+nav a {
+    color: white; /* Bağlantı metni beyaz */
+    font-size: 18px; /* Yazı boyutu */
+    font-family: 'EB Garamond', serif;
+    padding: 10px 20px;
+    text-decoration: none; /* Alt çizgi kaldırıldı */
+    display: inline-block; /* Yatay hizalama */
+    transition: all 0.3s ease; /* Geçiş animasyonu */
+}
+
+/* Navbar Bağlantı Linklerine Hover Efekti */
+nav a:hover {
+    background-color: grey; /* Hover rengi */
+    transform: scale(1.2); /* Hover efekti ile büyüme */
+    border-radius: 12px; /* Kenarları yuvarlatma */
+}
+
+/* Navbar logo */
+nav img {
+    width: 70px;
+    height: auto;
+    margin-left: 10px;
+}
+/* Navbar logo baslıgı */
+.navbar-title {
+    white-space: nowrap; /* Yazının alt alta gelmesini engeller */
+    display: inline-block; /* Gerekirse inline eleman gibi davranmasını sağlar */
+
+}
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url('dag_resmi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 100px; /* Navbar ile içerik üst üste binmesin */
+}
+
+
+h2, h3 {
+    color: #FFD700;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+h4{
+    color: red;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+/* Tablo Stili */
+/* Kiralama tablosu için özel stil */
+.kiralama-tablo {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.kiralama-tablo, .kiralama-tablo th, .kiralama-tablo td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+
+.kiralama-tablo th {
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    color: #FFD700;
+}
+
+
+td input {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Rezervasyon Listesi */
+#reservationList {
+    margin: 40px auto;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Toplam Tutar */
+#totalPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
+}
+#reservationCode{
+    color: #FFD700;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+}
+/* Buton Stili */
+button {
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #FFC107;
+    transform: scale(1.1);
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+/* Mobil uyumlu yazı stili */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* Mobilde başlık boyutunu küçültür */
+    }
+    p {
+        font-size: 1.2em; /* Mobilde paragraf boyutunu küçültür */
+        width: 90%; /* Mobilde yazının genişliğini artırır */
+    }
+}
+
+/* Footer Stilleri */
+footer {
+    background-color: rgba(18,15,15); /* Yarı şeffaf arka plan */
+    color: white; /* Yazı rengi beyaz */
+    font-family: 'EB Garamond', serif; /* Font tipi */
+    font-size: 1.2em; /* Yazı boyutu */
+    padding: 20px 0; /* Yatay ve dikey padding footer buyuklugu*/
+    text-align: center; /* Yazıyı ortalar */
+    margin-top:80px; /* İçerikten sonra boşluk bırakır */
+    width: 100%; /* Tam genişlik */
+}
+
+
+/* Footer'ı daha belirgin hale getirmek için */
+footer p {
+    margin: 0;
+    padding: 5px 0;
+}
